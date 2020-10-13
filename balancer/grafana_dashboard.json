@@ -354,7 +354,7 @@
         "y": 8
       },
       "hiddenSeries": false,
-      "id": 9,
+      "id": 13,
       "legend": {
         "avg": false,
         "current": false,
@@ -379,19 +379,11 @@
       "spaceLength": 10,
       "stack": false,
       "steppedLine": false,
-      "targets": [
-        {
-          "expr": "irate(hits_counter{job=\"Alex-1-backend\"}[1m])",
-          "interval": "",
-          "legendFormat": "{{job}}",
-          "refId": "A"
-        }
-      ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "RPS Alex-1",
+      "title": "Panel Title",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -544,7 +536,7 @@
         "y": 16
       },
       "hiddenSeries": false,
-      "id": 7,
+      "id": 9,
       "legend": {
         "avg": false,
         "current": false,
@@ -571,7 +563,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(hits_counter{job=\"Alex-2-backend\"}[1m])",
+          "expr": "irate(hits_counter{job=\"Alex-1-backend\"}[1m])",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
@@ -581,7 +573,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "RPS Alex-2",
+      "title": "RPS Alex-1",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -734,7 +726,7 @@
         "y": 24
       },
       "hiddenSeries": false,
-      "id": 8,
+      "id": 7,
       "legend": {
         "avg": false,
         "current": false,
@@ -761,7 +753,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(hits_counter{job=\"Alex-3-backend\"}[1m])",
+          "expr": "irate(hits_counter{job=\"Alex-2-backend\"}[1m])",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
@@ -771,7 +763,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "RPS Alex-3",
+      "title": "RPS Alex-2",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -902,6 +894,101 @@
         "align": false,
         "alignLevel": null
       }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 32
+      },
+      "hiddenSeries": false,
+      "id": 8,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.2.1",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "irate(hits_counter{job=\"Alex-3-backend\"}[1m])",
+          "interval": "",
+          "legendFormat": "{{job}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "RPS Alex-3",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     }
   ],
   "refresh": false,
@@ -919,5 +1006,5 @@
   "timezone": "",
   "title": "my_cool_dashboard",
   "uid": "LTiJjacMk",
-  "version": 1
+  "version": 3
 }
