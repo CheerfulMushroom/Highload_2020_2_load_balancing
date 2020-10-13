@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
