@@ -1,4 +1,4 @@
-package Highload_2020_2_load_balancing
+package main
 
 import (
 	"github.com/labstack/echo/v4"
@@ -8,9 +8,9 @@ import (
 
 func main() {
 	router := echo.New()
-	router.GET("/api",
+	router.GET("*",
 		func(ctx echo.Context) error {
-			return ctx.String(http.StatusOK, "hello")
+			return ctx.String(http.StatusOK, "Hello, I am fast backend server\n")
 		},
 	)
 	log.Fatal(router.Start(":8080"))
