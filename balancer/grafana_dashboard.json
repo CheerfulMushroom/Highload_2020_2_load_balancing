@@ -66,25 +66,25 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "100 * irate(node_cpu_seconds_total{mode=\"system\",job=\"Alex-1-server\"}[1m])",
+          "expr": "100 * irate(node_cpu_seconds_total{mode=\"system\",job=\"Alex-1-server\"}[15s])",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
         },
         {
-          "expr": "100 * irate(node_cpu_seconds_total{mode=\"system\",job=\"Alex-2-server\"}[1m])",
+          "expr": "100 * irate(node_cpu_seconds_total{mode=\"system\",job=\"Alex-2-server\"}[15s])",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "B"
         },
         {
-          "expr": "100 * irate(node_cpu_seconds_total{mode=\"system\",job=\"Alex-3-server\"}[1m])",
+          "expr": "100 * irate(node_cpu_seconds_total{mode=\"system\",job=\"Alex-3-server\"}[15s])",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "C"
         },
         {
-          "expr": "100 * irate(node_cpu_seconds_total{mode=\"system\",job=\"Alex-balancer-server\"}[1m])",
+          "expr": "100 * irate(node_cpu_seconds_total{mode=\"system\",job=\"Alex-balancer-server\"}[15s])",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "D"
@@ -179,19 +179,19 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(hits_counter{job=\"Alex-1-backend\"}[1m])",
+          "expr": "irate(hits_counter{job=\"Alex-1-backend\"}[15s])",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
         },
         {
-          "expr": "irate(hits_counter{job=\"Alex-2-backend\"}[1m])",
+          "expr": "irate(hits_counter{job=\"Alex-2-backend\"}[15s])",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "B"
         },
         {
-          "expr": "irate(hits_counter{job=\"Alex-3-backend\"}[1m])",
+          "expr": "irate(hits_counter{job=\"Alex-3-backend\"}[15s])",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "C"
@@ -286,7 +286,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "100 * irate(node_cpu_seconds_total{mode=\"system\",job=\"Alex-balancer-server\"}[1m])",
+          "expr": "100 * irate(node_cpu_seconds_total{mode=\"system\",job=\"Alex-balancer-server\"}[15s])",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
@@ -468,7 +468,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "100 * irate(node_cpu_seconds_total{mode=\"system\",job=\"Alex-1-server\"}[1m])",
+          "expr": "100 * irate(node_cpu_seconds_total{mode=\"system\",job=\"Alex-1-server\"}[15s])",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
@@ -563,7 +563,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(hits_counter{job=\"Alex-1-backend\"}[1m])",
+          "expr": "irate(hits_counter{job=\"Alex-1-backend\"}[15s])",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
@@ -658,7 +658,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "100 * irate(node_cpu_seconds_total{mode=\"system\",job=\"Alex-2-server\"}[1m])",
+          "expr": "100 * irate(node_cpu_seconds_total{mode=\"system\",job=\"Alex-2-server\"}[15s])",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
@@ -753,7 +753,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(hits_counter{job=\"Alex-2-backend\"}[1m])",
+          "expr": "irate(hits_counter{job=\"Alex-2-backend\"}[15s])",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
@@ -848,7 +848,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "100 * irate(node_cpu_seconds_total{mode=\"system\",job=\"Alex-3-server\"}[1m])",
+          "expr": "100 * irate(node_cpu_seconds_total{mode=\"system\",job=\"Alex-3-server\"}[15s])",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
@@ -943,7 +943,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(hits_counter{job=\"Alex-3-backend\"}[1m])",
+          "expr": "irate(hits_counter{job=\"Alex-3-backend\"}[15s])",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
@@ -999,12 +999,12 @@
     "list": []
   },
   "time": {
-    "from": "now-15m",
-    "to": "now"
+    "from": "2020-10-13T18:06:36.866Z",
+    "to": "2020-10-13T18:13:12.913Z"
   },
   "timepicker": {},
   "timezone": "",
   "title": "my_cool_dashboard",
   "uid": "LTiJjacMk",
-  "version": 3
+  "version": 4
 }

@@ -3,6 +3,7 @@ global:
   evaluation_interval: 5s
 
 scrape_configs:
+  # BALANCER
   - job_name: 'prometheus'
     static_configs:
       - targets: ['localhost:9090']
@@ -11,6 +12,9 @@ scrape_configs:
     static_configs:
       - targets: ['node_exporter:9100']
 
+  # BACKENDS
+
+  # BACKEND 1
   - job_name: 'Alex-1-backend'
     static_configs:
       - targets: ['185.86.145.226:5050']
@@ -19,6 +23,7 @@ scrape_configs:
     static_configs:
       - targets: ['185.86.145.226:9100']
 
+  # BACKEND 2
   - job_name: 'Alex-2-backend'
     static_configs:
       - targets: ['185.86.146.133:5050']
@@ -27,6 +32,7 @@ scrape_configs:
     static_configs:
       - targets: ['185.86.146.133:9100']
 
+  # BACKEND 3
   - job_name: 'Alex-3-backend'
     static_configs:
       - targets: ['185.86.147.112:5050']
