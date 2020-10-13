@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/labstack/echo"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
@@ -17,16 +18,30 @@ var hitsCounter = promauto.NewCounter(prometheus.CounterOpts{
 })
 
 func ServeContent(ctx echo.Context) error {
-	const maxWaitingTime = 1000
+	const maxWaitingTime = 500
 	time.Sleep(time.Duration(rand.Intn(maxWaitingTime)) * time.Millisecond)
 	return ctx.String(http.StatusOK, "Hello, I am fast backend server\n")
 }
 
 
-func IncreaseHits(next echo.HandlerFunc) echo.HandlerFunc {
+func IncreaseHitsMiddleware(next echo.HandlerFunc) echo.HandlerFunc {
 	return func(c echo.Context) error {
 		hitsCounter.Inc()
 		return next(c)
+	}
+}
+
+func LoggerMiddleware(next echo.HandlerFunc) echo.HandlerFunc {
+	return func(c echo.Context) error {
+		start := time.Now()
+		res := next(c)
+		fmt.Printf("%s %s %s %d %s\n",
+			c.RealIP(),
+			c.Request().Method,
+			c.Request().RequestURI,
+			c.Response().Status,
+			time.Since(start))
+		return res
 	}
 }
 
@@ -39,8 +54,10 @@ func main() {
 	}()
 
 	router := echo.New()
-	router.Use(IncreaseHits)
-	router.GET("/", ServeContent,
-	)
+	router.Use(IncreaseHitsMiddleware)
+	router.Use(LoggerMiddleware)
+
+
+	router.GET("/*", ServeContent)
 	log.Fatal(router.Start(":8080"))
 }
